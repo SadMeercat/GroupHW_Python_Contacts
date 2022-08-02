@@ -24,6 +24,7 @@ def create_obj(data: list):
     Метод, создающий "задачу"
     data - список [Описание задачи, дата, статус]
     '''
+
     cur.execute(f"""insert into tasks (description, date, status) values\
         (?,?,?)""", (data[0],data[1],data[2]))
     conn.commit()
